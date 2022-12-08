@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export function getInfo(){ 
     return async (dispatch)=>{
-        let json = await axios.get('ps-ch-deploy.herokuapp.com/login')
+        let json = await axios.get('http://localhost:3001/pragmasoft')
         console.log(json.data.series)
         return dispatch({
             type: 'GET_INFO',
@@ -23,7 +23,7 @@ export function postLogin(input){
 }
 export function registerOperation(payload){
     return async () => {
-        let json = await axios.post('ps-ch-deploy.herokuapp.com/login', payload);
+        let json = await axios.post('http://localhost:3001/pragmasoft', payload);
         return json;        
     }
 }
